@@ -1,12 +1,12 @@
 import { createApp } from "vue"
-import App from "./App.vue"
-import router from "./router"
-import store from "./store"
+import App from "@/App.vue"
+import router from "@/router"
+import store, { key } from "@/store"
 import ElementPlus from "element-plus" // 引入element-plus
-import "element-plus/theme-chalk/index.css" // 引入element-plus的样式
+import "@/assets/css/index.scss"
 
 createApp(App)
-  .use(store)
+  .use(store, key)
   .use(router)
   .use(ElementPlus, { zIndex: 3000, size: "small" })
   .mount("#app")

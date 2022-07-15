@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <el-button type="primary">el-button</el-button>
-  </div>
+  <router-view />
 </template>
 
 <script lang="ts">
 export default {
-  name: 'App',
+  name: "App"
 }
 </script>
 
 <style lang="scss">
-@import url(./assets/css/index.scss);
+// @import url(./assets/css/index.scss);
 </style>
