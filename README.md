@@ -1,8 +1,7 @@
 # assets-platform-web
 
-
 ## 项目结构
-
+```
 |-- public //无需打包的静态资源文件
 |-- src //项目源代码目录
 |-- types //存放项目中类型声明文件
@@ -16,6 +15,7 @@
 |-- .prettierrc.js //prettier 配置文件
 |-- babel.config.js //babel 配置文件
 |-- tsconfig.json //ts 配置文件
+```
 
 ### 配置 eslint，保证项目的质量
 
@@ -117,11 +117,34 @@ husky 是一个用来管理 git hook 的工具，git hook 即在我们使用 git
 ```
 
 ### CSS 初始化
+
 ```
 CSS初始化是指重设浏览器的样式。不同的浏览器默认的样式可能不尽相同，所以开发时的第一件事可能就是如何把它们统一。如果没对CSS初始化往往会出现浏览器之间的页面差异。
 ```
+### 分环境
+```
+1. 在根目录下新建 .env.xx (xx可以是自己取的用来区分这三个环境），如：
+.env.development     // 开发
+.env.test			// 测试
+.env.production		// 正式
+
+注意：全局变量仅除NODE_ENV和BASE_URL这两个保留变量外，其余自定义变量都需使用VUE_APP开头。
+
+1. package.json中打包命令：
+
+{
+  "scripts": {
+    "serve": "vue-cli-service serve", //本地运行，会把process.env.NODE_ENV设置为‘development‘
+    "test": "vue-cli-service build --mode test",//设置第二部的文件之后运行此命令会把process.env.NODE_ENV设置为‘production‘
+    "build": "vue-cli-service build --mode build"//设置第二部的文件之后运行此命令会把process.env.NODE_ENV设置为‘production‘
+  },
+}
+
+2. 在项目根目录添加文件“.env.alpha”和“.env.build”，其内容分别为：
+```
 
 ### 页面响应式
+
 ```
 当屏幕分辨率大于 1024px 时，网页宽度将会是 980px 。用 CSS3 媒体查询（Media query）来检验屏幕分辨率，如果小于 980px ，页面宽度将会用自适应来取代固定宽度；如果小于 650px ，主题和边栏（content container and sidebar）将会撑满屏幕并一列显示。
 响应式布局原理:使用媒体查询针对不同宽度的设备进行布局和样式的设置，从而适配不同设备的目的。
@@ -149,6 +172,12 @@ CSS初始化是指重设浏览器的样式。不同的浏览器默认的样式�
 /*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
 @media (max-width: 479px) {
 }
+```
+
+### 
+```
+npm install element-plus --save
+vue add element-plus
 ```
 
 ## Project setup

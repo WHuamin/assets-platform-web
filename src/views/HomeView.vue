@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <el-button type="primary">Primary</el-button>
+    Welcome to Your Vue.js + TypeScript App
+
+    <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" /> -->
   </div>
 </template>
 
